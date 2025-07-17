@@ -14,13 +14,14 @@ A deep‐learning project that leverages **contrastive learning** (triplet sampl
 2. [Dataset](#dataset)  
 3. [Data Loading & Triplet Sampling](#data-loading--triplet-sampling)  
 4. [Model Architectures](#model-architectures)  
-5. [Data Analysis](#data-analysis)  
-6. [Evaluation & Visualization](#evaluation--visualization)  
-7. [Usage](#usage)  
-8. [Dependencies](#dependencies)  
-9. [Project Structure](#project-structure)  
-10. [Future Improvements](#future-improvements)  
-11. [License](#license)  
+5. [Data Analysis](#data-analysis)
+6. [Learning Curves](#learning-curves)
+7. [Evaluation & Visualization](#evaluation--visualization)  
+8. [Usage](#usage)  
+9. [Dependencies](#dependencies)  
+10. [Project Structure](#project-structure)  
+11. [Future Improvements](#future-improvements)  
+12. [License](#license)  
 
 ---
 
@@ -95,7 +96,7 @@ Key features:
 - **Sample Triplet Images**:
   <img width="1696" height="1603" alt="image" src="https://github.com/user-attachments/assets/b088a3d0-2d79-47fb-a080-bf18cbcd07f8" />
 
-### Training Curves
+### Learning Curves
 
 | Loss Curve | Accuracy & F1 Score | Sensitivity & Specificity |
 |------------|---------------------|----------------------------|
@@ -103,10 +104,9 @@ Key features:
 
 ---
 
-> 📁 Place all your images inside an `assets/` folder:
----
 
-## 📊 Evaluation & Visualization
+
+## Evaluation & Visualization
 
 
 - **Confusion Matrix**: Multiclass performance overview.
