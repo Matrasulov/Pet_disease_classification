@@ -14,7 +14,7 @@ A deep‐learning project that leverages **contrastive learning** (triplet sampl
 2. [Dataset](#dataset)  
 3. [Data Loading & Triplet Sampling](#data-loading--triplet-sampling)  
 4. [Model Architectures](#model-architectures)  
-5. [Training & Loss](#training--loss)  
+5. [Data Analysis](#data-analysis)  
 6. [Evaluation & Visualization](#evaluation--visualization)  
 7. [Usage](#usage)  
 8. [Dependencies](#dependencies)  
@@ -55,7 +55,7 @@ Key features:
 
 ---
 
-## 🔄 Data Loading & Triplet Sampling
+## Data Loading & Triplet Sampling
 
 - **`CustomDataset`**  
 - Recursively collects all image paths.  
@@ -78,64 +78,42 @@ Key features:
 
 ---
 
-## 🏗️ Model Architectures
+## Model Architectures
 
-1. **Embedding Network**  
+ **Embedding Network**  
  - Base: Pretrained **ReXNet-150**  
  - Customized classification head → embedding vector.
 
-2. **Projection Head (optional)**  
- - MLP mapping embeddings to contrastive space (if using contrastive loss like NT-Xent).
 
 ---
 
-## 🧪 Training & Loss
+## Data Analysis
 
-- **Contrastive Loss** (e.g., Triplet Margin Loss or NT-Xent Loss)  
-- **Optimizer**: AdamW (or SGD + cosine LR)  
-- **Metrics**:  
-- Top-1 classification accuracy on test set  
-- Triplet margin validation loss  
+- **Class Imbalance Analysis**
+<img width="901" height="664" alt="image" src="https://github.com/user-attachments/assets/898bca16-e8bb-4168-829f-16e521472117" />
 
+- **Sample Triplet Images**:
+  <img width="1696" height="1603" alt="image" src="https://github.com/user-attachments/assets/b088a3d0-2d79-47fb-a080-bf18cbcd07f8" />
+
+### Training Curves
+
+| Loss Curve | Accuracy & F1 Score | Sensitivity & Specificity |
+|------------|---------------------|----------------------------|
+ | <img width="846" height="470" alt="image" src="https://github.com/user-attachments/assets/68a59d38-ddbe-4e46-9bc2-26b8de663fd2" /> | <img width="846" height="470" alt="image" src="https://github.com/user-attachments/assets/8a409016-a63c-4bf7-8e2e-33a5cd1349b5" /> | <img width="863" height="470" alt="image" src="https://github.com/user-attachments/assets/3ce6a56b-b99e-45c2-b001-1595769a2221" /> |
+
+---
+
+> 📁 Place all your images inside an `assets/` folder:
 ---
 
 ## 📊 Evaluation & Visualization
 
-- **Learning Curves**: Train/val loss & accuracy plots.  
-- **Confusion Matrix**: Multiclass performance overview.  
-- **Grad-CAM**: Class activation maps highlighting regions that influenced predictions (see `gradcam/` folder).
 
----
+- **Confusion Matrix**: Multiclass performance overview.
+<img width="1623" height="1041" alt="image" src="https://github.com/user-attachments/assets/75a5264a-6877-4111-8104-2d2b697c3740" />
 
-## ⚙️ Usage
+- **Grad-CAM**: Class activation maps highlighting regions that influenced predictions.
+<img width="1785" height="1021" alt="image" src="https://github.com/user-attachments/assets/b7e4519d-336e-4ac6-895e-5daa2dc918fb" />
 
-```bash
-# 1. Clone and enter project
-git clone https://github.com/your-username/pet-disease-contrastive.git
-cd pet-disease-contrastive
 
-# 2. Install dependencies
-pip install -r requirements.txt
 
-# 3. Prepare Kaggle credentials
-export KAGGLE_USERNAME=your_username
-export KAGGLE_KEY=your_key
-
-# 4. Download & extract dataset
-python scripts/download_data.py --dataset pet-disease-images
-
-# 5. Train
-python train.py \
---data_root ./datasets/pet_disease/data \
---backbone rexnet_150 \
---epochs 30 \
---batch_size 16 \
---lr 1e-4 \
---contrastive_loss triplet
-
-# 6. Evaluate
-python evaluate.py --checkpoint runs/exp1/model_best.pth
-
-# 7. Visualize GradCAM
-python visualize_gradcam.py --image_path assets/cat_ringworm.jpg \
---checkpoint runs/exp1/model_best.pth
