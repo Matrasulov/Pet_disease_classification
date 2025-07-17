@@ -24,7 +24,7 @@ A deep‐learning project that leverages **contrastive learning** (triplet sampl
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 This repository implements a **contrastive learning** pipeline for multi‐class pet disease classification. By sampling **triplets**—a **query** (anchor) image, a **positive** image (same class), and a **negative** image (different class)—the model learns an embedding space where diseases cluster tightly and are well separated from other conditions.
 
