@@ -17,11 +17,6 @@ A deep‐learning project that leverages **contrastive learning** (triplet sampl
 5. [Data Analysis](#data-analysis)
 6. [Learning Curves](#learning-curves)
 7. [Evaluation & Visualization](#evaluation--visualization)  
-8. [Usage](#usage)  
-9. [Dependencies](#dependencies)  
-10. [Project Structure](#project-structure)  
-11. [Future Improvements](#future-improvements)  
-12. [License](#license)  
 
 ---
 
