@@ -1,6 +1,6 @@
 
 
-Link to notebbok: https://colab.research.google.com/drive/1NVzNyw_YhNmemHSyJSiKQVESM-YRQkop?usp=sharing
+Link to notebook: https://colab.research.google.com/drive/1NVzNyw_YhNmemHSyJSiKQVESM-YRQkop?usp=sharing
 
 # 🐾 Pet Disease Contrastive Learning Classification
 
@@ -38,7 +38,7 @@ Key features:
 
 ---
 
-## 📂 Dataset
+##  Dataset
 
 **Source**: Kaggle “Pet Disease Images”  
 - Organized on disk as:
